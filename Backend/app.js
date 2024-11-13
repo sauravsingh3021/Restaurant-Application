@@ -10,6 +10,11 @@ import { dbConnection } from "./database/dbConnection.js";
 const app = express();
 dotenv.config({path:"./config/config.env"});
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Restaurant Application Backend!");
+});
+
+
 app.use(cors({
     origin: [process.env.FRONTEND_URL],
     methods: ["POST"],
